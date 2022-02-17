@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> <!--버전을 굳이 명시 해서 쓰지 않아도 된다. 최신버젼으로 ..-->-->
+    <script src="https://unpkg.com/vue@next"></script>
+
+</head>
+<body>
+    <h1>개요</h1>
+    <h3>Vue.js?</h3>
+    <p>Vue.js 가볍고 빠르다 
+        Mvvm패턴 에 영갑을 받아서 view 에 최적화
+        DOM 조작에 있어 , 기존 JQUERY를 이용한 DOM 조작이 필요 없어짐.
+        앵귤러의 양방향 데이터 바인딩과 리액트의 단방향 데이터 흐름의 장점을 모두결합
+    </p>
+
+    <div id="app">
+        {{message}} <!--콧수염괄호, 머스태쉬(mustache)태그,뷰에서 html을 연결하는 가장 기본적인 삽입방식, 뷰의 반응성에 의해서 data속성값이 바뀌면 자동으로 갱신된다.-->
+    </div>
+    <script> 
+        /*new Vue({//뷰인스턴스 생성(el 속성으로 뷰인스턴스가 그려질 지점지정, data 속성 message 값 정의 )
+            el:'#app', //관리할 태그
+            data:{ // 객체내에서 사용가능한 데이터
+                message:"Intro to vue with Vue2"
+            }
+        })*/
+
+        Vue.createApp({
+            data(){
+                return{
+                    message: 'Intro to vue with Vue3'
+                }
+            }
+        }).mount('#app')//연동 mount: 컴포넌트가 dom에 삽입 또는 그러진것
+    </script>
+</body>
+</html>
